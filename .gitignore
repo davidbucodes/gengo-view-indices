@@ -1,0 +1,6 @@
+node_modules
+dist
+
+JMdict_e.xml
+JMnedict.xml
+json.json
