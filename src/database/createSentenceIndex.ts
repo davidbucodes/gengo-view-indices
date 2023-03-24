@@ -3,7 +3,7 @@ import * as fs from "fs";
 import { output } from "../data/tatoeba";
 
 export const index = new Index<SentenceDocument>({
-  name: "kanji",
+  name: "sentence",
   searchableJapaneseTextFields: ["j"],
   searchableEnglishTextFields: ["e"],
 });
