@@ -1,4 +1,4 @@
-import { SentenceDocument } from "@gengo-view/database";
+import { SentenceDocument } from "@davidbucodes/gengo-view-database";
 
 type SentenceData = SentenceDocument;
 

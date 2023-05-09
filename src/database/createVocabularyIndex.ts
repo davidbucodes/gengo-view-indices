@@ -1,4 +1,4 @@
-import { Index, VocabularyDocument } from "@gengo-view/database";
+import { Index, VocabularyDocument } from "@davidbucodes/gengo-view-database";
 import * as fs from "fs";
 import { output as jmdictOutput } from "../data/jmdict_e";
 import { output as tanosOutput } from "../data/tanos/output";

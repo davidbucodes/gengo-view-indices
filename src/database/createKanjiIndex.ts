@@ -1,4 +1,4 @@
-import { Index, KanjiDocument } from "@gengo-view/database";
+import { Index, KanjiDocument } from "@davidbucodes/gengo-view-database";
 import * as fs from "fs";
 import { output as kanjidic2Output } from "../data/kanjidic2";
 import { output as kradfileOutput } from "../data/kradfile";

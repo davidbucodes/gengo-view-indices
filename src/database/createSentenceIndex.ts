@@ -1,4 +1,4 @@
-import { Index, SentenceDocument } from "@gengo-view/database";
+import { Index, SentenceDocument } from "@davidbucodes/gengo-view-database";
 import * as fs from "fs";
 import { output } from "../data/tatoeba";
 

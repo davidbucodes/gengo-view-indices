@@ -1,4 +1,4 @@
-import { Index, NameDocument } from "@gengo-view/database";
+import { Index, NameDocument } from "@davidbucodes/gengo-view-database";
 import * as fs from "fs";
 import { output } from "../data/jmnedict";
 
