@@ -5,17 +5,18 @@ import { output as kradfileOutput } from "../data/kradfile";
 import { output as kradfile2Output } from "../data/kradfile2";
 import { output as radkfileOutput } from "../data/radkfile";
 import { output as radkfile2Output } from "../data/radkfile2";
+import { kanjiToJlpt } from "../data/tanos/output";
 
 export const index = new Index<KanjiDocument>({
   name: "kanji",
-  searchableJapaneseTextFields: ["kanji", "kunReading", "onReading"],
+  searchableJapaneseTextFields: ["kanji", "kun", "on"],
   searchableEnglishTextFields: ["meaning"],
 });
 
 const docs = Object.entries(kanjidic2Output).map(
   ([
     kanji,
-    { freq, grade, jlpt, strokeCount, onReading, kunReading, meaning, nanori },
+    { freq, grade, jlpt, strokeCount, on, kun, pinyin, meaning, nanori },
   ]) => {
     const appearsAtKanji = radkfileOutput[kanji] || radkfile2Output[kanji];
     const radicals = kradfileOutput[kanji] || kradfile2Output[kanji];
@@ -23,10 +24,11 @@ const docs = Object.entries(kanjidic2Output).map(
       kanji,
       freq,
       grade,
-      jlpt,
+      jlpt: Number(kanjiToJlpt[kanji] || jlpt),
       strokeCount,
-      onReading: onReading.sort((a, b) => a.length - b.length),
-      kunReading: kunReading.sort((a, b) => a.length - b.length),
+      on: on.sort((a, b) => a.length - b.length),
+      kun: kun.sort((a, b) => a.length - b.length),
+      pinyin: pinyin.sort((a, b) => a.length - b.length),
       meaning,
       nanori: nanori.filter(n => n),
       appearsAtKanji,

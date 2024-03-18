@@ -7,8 +7,9 @@ interface KanjiData {
   grade: number;
   jlpt: number;
   strokeCount: number[];
-  onReading: string[];
-  kunReading: string[];
+  on: string[];
+  kun: string[];
+  pinyin: string[];
   meaning: string[];
   nanori: string[];
 }

@@ -16,11 +16,14 @@ const results: Kanjidic2Output = kanjidic2.kanjidic2.character.reduce(
     if (!Array.isArray(readingArray)) {
       readingArray = [readingArray];
     }
-    const onReading = readingArray
+    const on = readingArray
       .filter(reading => reading?.["@_r_type"] === "ja_on")
       .map(reading => reading?.["#text"]);
-    const kunReading = readingArray
+    const kun = readingArray
       .filter(reading => reading?.["@_r_type"] === "ja_kun")
+      .map(reading => reading?.["#text"]);
+    const pinyin = readingArray
+      .filter(reading => reading?.["@_r_type"] === "pinyin")
       .map(reading => reading?.["#text"]);
 
     let meaning: string[] = [];
@@ -51,8 +54,9 @@ const results: Kanjidic2Output = kanjidic2.kanjidic2.character.reduce(
       grade,
       jlpt,
       strokeCount: Array.isArray(strokeCount) ? strokeCount : [strokeCount],
-      onReading,
-      kunReading,
+      on,
+      kun,
+      pinyin,
       meaning,
       nanori: Array.isArray(nanori) ? nanori : [nanori],
     };
