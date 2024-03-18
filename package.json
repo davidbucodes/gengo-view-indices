@@ -1,6 +1,6 @@
 {
   "name": "@davidbucodes/gengo-view-indices",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "",
   "scripts": {
     "build": "ts-node ./src/build.ts",
