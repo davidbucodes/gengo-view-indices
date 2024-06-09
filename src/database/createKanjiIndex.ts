@@ -9,7 +9,7 @@ import { kanjiToJlpt } from "../data/tanos/output";
 
 export const index = new Index<KanjiDocument>({
   name: "kanji",
-  searchableJapaneseTextFields: ["kanji", "kun", "on"],
+  searchableJapaneseTextFields: ["kanji", "kunS", "on"],
   searchableEnglishTextFields: ["meaning"],
 });
 
@@ -20,6 +20,7 @@ const docs = Object.entries(kanjidic2Output).map(
   ]) => {
     const appearsAtKanji = radkfileOutput[kanji] || radkfile2Output[kanji];
     const radicals = kradfileOutput[kanji] || kradfile2Output[kanji];
+    const kunSorted = kun.sort((a, b) => a.length - b.length);
     return {
       kanji,
       freq,
@@ -27,7 +28,8 @@ const docs = Object.entries(kanjidic2Output).map(
       jlpt: Number(kanjiToJlpt[kanji] || jlpt),
       strokeCount,
       on: on.sort((a, b) => a.length - b.length),
-      kun: kun.sort((a, b) => a.length - b.length),
+      kun: kunSorted,
+      kunS: kunSorted.map(k => k.replace(/[-\.]/g, "")),
       pinyin: pinyin.sort((a, b) => a.length - b.length),
       meaning,
       nanori: nanori.filter(n => n),
