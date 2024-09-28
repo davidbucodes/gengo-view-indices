@@ -1,6 +1,6 @@
 {
   "name": "@davidbucodes/gengo-view-indices",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "",
   "scripts": {
     "build": "ts-node ./src/build.ts",
@@ -10,8 +10,10 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
+  "dependencies": {
+    "@davidbucodes/gengo-view-database": "^1.0.5"
+  },
   "devDependencies": {
-    "@davidbucodes/gengo-view-database": "^1.0.4",
     "@types/encoding-japanese": "^2.0.1",
     "@types/xml2js": "^0.4.11",
     "encoding-japanese": "^2.0.0",
